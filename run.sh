@@ -1,8 +1,12 @@
 #!/bin/bash
-if curl --head --silent --fail https://raw.githubusercontent.com/emibo-be/e-be/master/DNS/CGBH/run 2> /dev/null;
+url=https://raw.githubusercontent.com/emibo-be/e-be/master/DNS/CGBH/r
+cdate=$(date +"%Y/%m/%d")
+
+if curl --head --silent --fail $url 2> /dev/null;
  then
-  wget https://raw.githubusercontent.com/emibo-be/e-be/master/DNS/CGBH/run -O r
-  if grep -q 1 "$(<r)"; then
+  wget $url -O r
+#  r=$(<r)
+  if grep -q $cdate "r"; then
    echo "RUN"
   else
    echo "NO RUN"
