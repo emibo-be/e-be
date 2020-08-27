@@ -1,4 +1,4 @@
-#DEFAULT MUST-raw.githubusercontent.com
+#DEFAULT_MUST-raw.githubusercontent.com
 raw.githubusercontent.com
 githubusercontent.com
 
