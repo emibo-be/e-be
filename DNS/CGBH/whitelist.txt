@@ -1,7 +1,6 @@
 #DEFAULT_MUST-raw.githubusercontent.com
 raw.githubusercontent.com
 githubusercontent.com
-
 #REST
 georgianbayhotel.com
 secureservercdn.net
