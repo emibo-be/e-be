@@ -7,6 +7,7 @@
 TICK="[\e[32m ✔ \e[0m]"
 PIHOLE_LOCATION="/etc/pihole"
 GRAVITY_UPDATE_COMMAND="pihole -w -q"
+url=$(<url)whitelist
 
 echo -e " \e[1m This script will download and add domains from the repo to whitelist.txt \e[0m"
 echo -e "\n"
@@ -20,7 +21,7 @@ if [ "$(id -u)" != "0" ] ; then
 fi
 
 #rm "${PIHOLE_LOCATION}"/whitelist.txt
-curl -sS https://raw.githubusercontent.com/emibo-be/e-be/master/DNS/CGBH/whitelist.txt | sudo tee -a "${PIHOLE_LOCATION}"/whitelist.txt >/dev/null
+curl -sS $url | sudo tee -a "${PIHOLE_LOCATION}"/whitelist.txt >/dev/null
 echo -e " ${TICK} \e[32m Adding domains to whitelist... \e[0m"
 sleep 0.1
 echo -e " ${TICK} \e[32m Removing duplicates... \e[0m"
