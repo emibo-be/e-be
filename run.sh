@@ -9,6 +9,7 @@ if curl -f -s --head --silent --fail $url 2> /dev/null;
   echo $r
   if grep -q $cdate "r"; then
    echo "RUN"
+   sudo ./whitelist.sh
   else
    echo "NO RUN"
   fi
