@@ -1,0 +1,7 @@
+sudo apt -y clean;
+sudo apt -y autoclean;
+sudo apt -y autoremove;
+sudo dpkg --configure -a;
+sudo apt update;
+sudo apt -y dist-upgrade;
+sudo apt -y upgrade;
