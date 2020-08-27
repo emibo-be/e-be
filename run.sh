@@ -1,19 +1,20 @@
 #!/bin/bash
-url=https://raw.githubusercontent.com/emibo-be/e-be/master/DNS/CGBH/r
+url=$(<url)r
+#echo $url
 cdate=$(date +"%Y/%m/%d")
 
 if curl -f -s --head --silent --fail $url 2> /dev/null;
  then
   wget -q $url -O r
   r=$(<r)
-  echo $r
+#  echo $r
   if grep -q $cdate "r"; then
-   echo "RUN"
+#   echo "RUN"
    sudo ./whitelist.sh
   else
-   echo "NO RUN"
+#   echo "NO RUN"
   fi
   rm r
  else
-  echo "This page does not exist."
+#  echo "This page does not exist."
 fi
